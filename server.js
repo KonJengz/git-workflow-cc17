@@ -4,6 +4,7 @@ const notFound = require('./middlewares/not-found')
 const app = express()
 
 app.use(notFound)
+app.use(errormiddleware);
 
 const port = process.env.PORT || 8000
 app.listen(port, () => console.log('run port', port))
