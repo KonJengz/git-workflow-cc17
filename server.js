@@ -1,6 +1,10 @@
-require('dotenv').config()
-const express = require('express')
-const app = express()
+require("dotenv").config();
+const express = require("express");
+const errormiddleware = require("./middlewares/error-middleware");
+const app = express();
 
-const port = process.env.PORT || 8000
-app.listen(port, () => console.log('run port', port))
+app.use(errormiddleware);
+
+const port = process.env.PORT || 8000;
+
+app.listen(port, () => console.log("run port", port));
